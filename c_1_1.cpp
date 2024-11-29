@@ -202,12 +202,65 @@ long long factorial(unsigned int num)
         return num * factorial(num -1);
     }
 }
+/**You are given an integer array score of size n, where score[i] is the score of the ith athlete in a competition. All the scores are guaranteed to be unique.
+
+The athletes are placed based on their scores, where the 1st place athlete has the highest score, the 2nd place athlete has the 2nd highest score, and so on. The placement of each athlete determines their rank:
+
+    The 1st place athlete's rank is "Gold Medal".
+    The 2nd place athlete's rank is "Silver Medal".
+    The 3rd place athlete's rank is "Bronze Medal".
+    For the 4th place to the nth place athlete, their rank is their placement number (i.e., the xth place athlete's rank is "x").
+
+Return an array answer of size n where answer[i] is the rank of the ith athlete. */
+vector<string> rankS(vector<int> arr)
+{
+    vector <int> scores= arr;
+    sort(arr.begin(), arr.end(), greater<int>());
+    unordered_map<int,string> rankMap;
+    for (size_t i = 0; i < scores.size(); ++i) {
+        if (i == 0)
+            rankMap[scores[i]] = "Gold Medal";
+        else if (i == 1)
+            rankMap[scores[i]] = "Silver Medal";
+        else if (i == 2)
+            rankMap[scores[i]] = "Bronze Medal";
+        else
+            rankMap[scores[i]] = std::to_string(i + 1);
+    }
+    vector<std::string> result;
+    for (int score : scores) {
+        result.push_back(rankMap[score]);
+    }
+
+    return result;
+}
+
+
+//Given an array arr[] of n integers where arr[i] represents the number of chocolates in ith packet. Each packet can have a variable number of chocolates. 
+//There are m students, the task is to distribute chocolate packets such that: 
+/**    Each student gets exactly one packet.
+    The difference between the maximum and minimum number of chocolates in the packets given to the students is minimized. */
+// int chocolotFactory()
+// {
+
+// }
+
+/**Given a set of non-overlapping intervals and a new interval, the task is to insert the interval at the correct position such that after insertion, 
+ * the intervals remain sorted. If the insertion results in overlapping intervals, 
+ * then merge the overlapping intervals. Assume that the set of non-overlapping intervals is sorted based on start time. */
+
 int main()
 {
     vector<int> arr = {0, -1, 2, -3, 1, 2, 2, -3};
     vector<int> arr1 = {10, 3, 5, 6, 2};
     vector<int> arr2 = {2, 3, -8, 7, -1, 2, 3};
     vector<int> arr3 = {4, 5, 6, 7, 0, 1, 2};
+    vector<int> rankings = {5,4,3,2,1};
+    vector<std::string> ranks = rankS(rankings);
+
+    for (const std::string& rank : ranks) {
+        std::cout << rank << " ";
+    }
         // int target = -2;
     // cout << givenSum(arr, target);
     // cout << givenSum2(arr, target);
@@ -225,6 +278,10 @@ int main()
     // }
     // cout <<  findEl(arr3, 0);
     // cout << waterContainer({1,5, 4, 3});
-    cout << factorial(50); //wont work for 100;
+    //cout << factorial(50); //wont work for 100;
     return 0;
 }
+
+
+/**Given N set of time intervals, the task is to find the intervals which don’t overlap with the given set of intervals.
+Examples:  */
