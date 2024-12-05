@@ -1,5 +1,5 @@
-use std::collections::HashSet;
 use std::collections::HashMap;
+use std::collections::HashSet;
 use std::io;
 
 /**Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -16,9 +16,8 @@ fn two_sum(arr: &[i32], target: i32) -> Vec<i32> {
     vec![]
 }
 //removing duplicate using sets
-fn testing(arr: [i32; 5])->HashSet<i32>
-{
-    let set:HashSet<i32> = arr.into_iter().collect();
+fn testing(arr: [i32; 5]) -> HashSet<i32> {
+    let set: HashSet<i32> = arr.into_iter().collect();
     return set;
 }
 /**Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order. */
@@ -28,14 +27,13 @@ fn search_index(arr: &[i32], target: i32) -> i32 {
             return i as i32;
         }
     }
-    -1 
+    -1
 }
-  
+
 /**Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
 You must implement a solution with a linear runtime complexity and use only constant extra space. */
 
-fn singleNumber(arr: &[i32]) -> i32
-{
+fn singleNumber(arr: &[i32]) -> i32 {
     let mut freq_map = HashMap::new();
     for &num in arr {
         *freq_map.entry(num).or_insert(0) += 1;
@@ -64,12 +62,9 @@ fn count_items(arr: &[i32]) {
 
 //Given a 2D integer array matrix, return the transpose of matrix.
 // The transpose of a matrix is the matrix flipped over its main diagonal, switching the matrix's row and column indices.
-fn transpose(mut arr: Vec<Vec<i32>>) -> Vec<Vec<i32>>
-{
-    for i in 0..arr.len()
-    {
-        for j in i+1..arr.len()
-        {
+fn transpose(mut arr: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+    for i in 0..arr.len() {
+        for j in i + 1..arr.len() {
             let temp = arr[i][j];
             arr[i][j] = arr[j][i];
             arr[j][i] = temp;
@@ -78,10 +73,8 @@ fn transpose(mut arr: Vec<Vec<i32>>) -> Vec<Vec<i32>>
     return arr;
 }
 
-//Given a boolean matrix mat[M][N] of size M X N, modify it such that if a matrix cell mat[i][j] is 1 (or true) then make all the cells of ith row and jth 
+//Given a boolean matrix mat[M][N] of size M X N, modify it such that if a matrix cell mat[i][j] is 1 (or true) then make all the cells of ith row and jth
 //column as 1.
-
-
 
 /**you are given a sorted unique integer array nums.
 A range [a,b] is the set of all integers from a to b (inclusive).
@@ -95,18 +88,13 @@ Each range [a,b] in the list should be output as:
 /**Given an array of integers nums, half of the integers in nums are odd, and the other half are even.
 Sort the array so that whenever nums[i] is odd, i is odd, and whenever nums[i] is even, i is even.
 Return any answer array that satisfies this condition. */
-fn oddEvenIndex(arr:&[i32])-> Vec<i32>
-{
+fn oddEvenIndex(arr: &[i32]) -> Vec<i32> {
     let mut evens = vec![];
     let mut odds = vec![];
-    for i in 0..arr.len()
-    {
-        if arr[i] % 2 ==0 
-        {
+    for i in 0..arr.len() {
+        if arr[i] % 2 == 0 {
             odds.push(arr[i]);
-        }
-        else {
-            
+        } else {
             evens.push(arr[i]);
         }
     }
@@ -115,8 +103,7 @@ fn oddEvenIndex(arr:&[i32])-> Vec<i32>
     // print!("{:?}", result);
     let mut even_index = 0;
     let mut odd_index = 1;
-    for i in 0..arr.len() /2
-    {
+    for i in 0..arr.len() / 2 {
         result[even_index] = evens.pop().unwrap();
         result[odd_index] = odds.pop().unwrap();
         even_index += 2;
@@ -124,20 +111,42 @@ fn oddEvenIndex(arr:&[i32])-> Vec<i32>
     }
     return result;
 }
+// Given an integer array, the task is to find the maximum product of any subarray.
+fn maxSubArray(arr: Vec<i32>) ->Option<i32>
+{
+    //creating all subarrays
+    let mut subArray: Vec<Vec<i32>> = Vec::new();
+    for i in 0..arr.len() {
+        for j in i..arr.len() {
+            subArray.push(arr[i..=j].to_vec());
+        }
+    }
+    let mut maxEl: Vec<i32> = Vec::new();
 
+    for i in subArray {
+        let mut max = 1;
+        for j in i {
+            max *= j;
+        }
+        maxEl.push(max);
+    }
+    maxEl.iter().max().cloned()
+}
 fn main() {
     let nums: [i32; 4] = [2, 7, 11, 15];
-    let num1= [1,4, 5, 5, 6];
-    let arr2 = [1,3,5,6];
-    let evenOdd = [4,2,5,7];
+    let num1 = [1, 4, 5, 5, 6];
+    let arr2 = [1, 3, 5, 6];
+    let array = vec![-1, -3, -10, 0, 60];
+    let evenOdd = [4, 2, 5, 7];
     let result: HashSet<i32> = testing(num1);
-    let matrix = vec![vec![1, 2,3], vec![4,5,6]];
+    let matrix = vec![vec![1, 2, 3], vec![4, 5, 6]];
     let transposed = transpose(matrix);
     // println!("{:?}", two_sum(&nums, target));
     //let nums = vec![4, 1, 2, 1, 2, 4, 4];
     // count_items(&nums);
     // println!("{:?}", result);
     //print!("{}", search_index(&arr2, 5));
-    oddEvenIndex(&evenOdd);
-    println!("{:?}", transposed);
+    // oddEvenIndex(&evenOdd);
+    // println!("{:?}", transposed);
+    print!("{:?}", maxSubArray(array));
 }
