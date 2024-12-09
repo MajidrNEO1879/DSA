@@ -132,6 +132,41 @@ fn maxSubArray(arr: Vec<i32>) ->Option<i32>
     }
     maxEl.iter().max().cloned()
 }
+//Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer
+//  range [-231, 231 - 1], then return 0. Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
+fn reverse (num: i32)
+{
+     let y =num.to_string()
+    .chars()
+    .rev()
+    .collect::<String>()
+    .parse::<i32>()
+    .unwrap();
+    //a better more clear solution
+    //et num_string = num.to_string();
+    //let reversed_string: String = num_string.chars().rev().collect();
+    //reversed_string.parse()
+}
+//Given an integer x, return true if x is a palindrome, and false otherwise.
+fn palindrome(num: i32) ->bool
+{
+    let y =num.to_string()
+    .chars()
+    .rev()
+    .collect::<String>()
+    .parse::<i32>()
+    .unwrap();
+   if y == num
+   {
+    true
+   }
+   else {
+       false
+   }
+}   
+/**You are climbing a staircase. It takes n steps to reach the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? */
+
 fn main() {
     let nums: [i32; 4] = [2, 7, 11, 15];
     let num1 = [1, 4, 5, 5, 6];
@@ -141,6 +176,10 @@ fn main() {
     let result: HashSet<i32> = testing(num1);
     let matrix = vec![vec![1, 2, 3], vec![4, 5, 6]];
     let transposed = transpose(matrix);
+    let num:i32 = 202;
+    // let y = reverse(num);
+    let palindoreEx = palindrome(num);
+    print!("{}", palindoreEx); 
     // println!("{:?}", two_sum(&nums, target));
     //let nums = vec![4, 1, 2, 1, 2, 4, 4];
     // count_items(&nums);
@@ -148,5 +187,5 @@ fn main() {
     //print!("{}", search_index(&arr2, 5));
     // oddEvenIndex(&evenOdd);
     // println!("{:?}", transposed);
-    print!("{:?}", maxSubArray(array));
+    // print!("{:?}", maxSubArray(array));
 }
