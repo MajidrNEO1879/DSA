@@ -1,3 +1,4 @@
+use core::num;
 use std::collections::HashMap;
 use std::collections::HashSet;
 use std::io;
@@ -166,7 +167,17 @@ fn palindrome(num: i32) ->bool
 }   
 /**You are climbing a staircase. It takes n steps to reach the top.
 Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? */
-
+fn steps (number:i32) ->i32
+{
+    if number ==1 || number == 0
+    {
+        return 1;
+    }
+    else
+    {
+        return steps(number -1) + steps( number -2);
+    }
+}
 fn main() {
     let nums: [i32; 4] = [2, 7, 11, 15];
     let num1 = [1, 4, 5, 5, 6];
@@ -176,10 +187,11 @@ fn main() {
     let result: HashSet<i32> = testing(num1);
     let matrix = vec![vec![1, 2, 3], vec![4, 5, 6]];
     let transposed = transpose(matrix);
-    let num:i32 = 202;
+    let num:i32 = 5;
     // let y = reverse(num);
-    let palindoreEx = palindrome(num);
-    print!("{}", palindoreEx); 
+    //let palindoreEx = palindrome(num);
+    let steps = steps(num);
+    print!("{}", steps); 
     // println!("{:?}", two_sum(&nums, target));
     //let nums = vec![4, 1, 2, 1, 2, 4, 4];
     // count_items(&nums);
