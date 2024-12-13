@@ -2,6 +2,7 @@ use core::num;
 use std::collections::HashMap;
 use std::collections::HashSet;
 use std::io;
+mod ds_2;
 
 /**Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -178,6 +179,34 @@ fn steps (number:i32) ->i32
         return steps(number -1) + steps( number -2);
     }
 }
+fn isValid(s: String)->bool
+{
+    let mut stack: Vec<char> = Vec::new();
+
+    for ch in s.chars() {
+        match ch {
+            '(' | '{' | '[' => stack.push(ch), 
+            ')' => {
+                if stack.pop() != Some('(') {
+                    return false;
+                }
+            }
+            '}' => {
+                if stack.pop() != Some('{') {
+                    return false;
+                }
+            }
+            ']' => {
+                if stack.pop() != Some('[') {
+                    return false;
+                }
+            }
+            _ => return false, 
+        }
+    }
+
+    stack.is_empty() 
+}
 fn main() {
     let nums: [i32; 4] = [2, 7, 11, 15];
     let num1 = [1, 4, 5, 5, 6];
@@ -191,7 +220,7 @@ fn main() {
     // let y = reverse(num);
     //let palindoreEx = palindrome(num);
     let steps = steps(num);
-    print!("{}", steps); 
+    //print!("{}", steps); 
     // println!("{:?}", two_sum(&nums, target));
     //let nums = vec![4, 1, 2, 1, 2, 4, 4];
     // count_items(&nums);
@@ -200,4 +229,9 @@ fn main() {
     // oddEvenIndex(&evenOdd);
     // println!("{:?}", transposed);
     // print!("{:?}", maxSubArray(array));
+    // let input = String::from("({[]})");
+    // println!("Is valid: {}", isValid(input));
+    let array = vec![4,3,2,1];
+    let result = ds_2::plus_one(array);
+    println!("Result: {:?}", result); 
 }
