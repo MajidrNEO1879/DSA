@@ -231,7 +231,11 @@ fn main() {
     // print!("{:?}", maxSubArray(array));
     // let input = String::from("({[]})");
     // println!("Is valid: {}", isValid(input));
-    let array = vec![4,3,2,1];
-    let result = ds_2::plus_one(array);
-    println!("Result: {:?}", result); 
+    // let array = vec![4,3,2,1];
+    // let result = ds_2::plus_one(array);
+    // println!("Result: {:?}", result); 
+    let items1 = vec![1,2,3,4,5];
+    let items2 = vec![6,7];
+    let result = ds_2::mergedLists(items1, items2);
+    println!("{:?}", result);
 }
