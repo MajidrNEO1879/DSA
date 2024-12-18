@@ -207,6 +207,31 @@ fn isValid(s: String)->bool
 
     stack.is_empty() 
 }
+
+//Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must appear as many 
+//times as it shows in both arrays and you may return the result in any order.
+fn intersect(arr1: Vec<i32>, arr2: Vec<i32>) -> Vec<i32> {
+    let mut intersect: Vec<i32> = Vec::new();
+    let mut arr2 = arr2; 
+
+    for i in &arr1 {
+        let mut found = false;
+        for j in 0..arr2.len() {
+            if *i == arr2[j] {
+                intersect.push(*i); 
+                arr2.remove(j); 
+                found = true;
+                break; 
+            }
+        }
+        if found {
+            continue; 
+        }
+    }
+
+    intersect
+}
+
 fn main() {
     let nums: [i32; 4] = [2, 7, 11, 15];
     let num1 = [1, 4, 5, 5, 6];
@@ -234,8 +259,9 @@ fn main() {
     // let array = vec![4,3,2,1];
     // let result = ds_2::plus_one(array);
     // println!("Result: {:?}", result); 
-    let items1 = vec![1,2,3,4,5];
-    let items2 = vec![6,7];
-    let result = ds_2::mergedLists(items1, items2);
-    println!("{:?}", result);
+    let items1 = vec![1,2,2,1];
+    let items2 = vec![2, 2];
+    //let result = ds_2::mergedLists(items1, items2);
+    //println!("{:?}", result);
+    println!("{:?}", intersect(items1, items2));
 }

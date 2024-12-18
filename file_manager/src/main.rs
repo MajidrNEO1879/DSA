@@ -2,6 +2,11 @@ use std::fs;
 use std::io;
 
 fn main() -> io::Result<()> {
+    println!("Choose the criteria for the files: ");
+    println!("1- date ");
+    println!("2- size ");
+    println!("3- name ");
+    println!("4- type ");
     // Get the current directory
     let current_dir = std::env::current_dir()?;
     println!("Current directory: {}", current_dir.display());
