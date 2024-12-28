@@ -41,3 +41,14 @@ pub fn mergedLists(arr1 : Vec<i32>, arr2 :Vec<i32>)->Vec<i32>
    
 }
 
+//write a recursive function to count the items in a list
+fn arrayLen(arr:&Vec<i32>)->usize
+{
+   if arr.is_empty()
+   {
+    return 0;
+   }
+   return 1 + arrayLen(&arr[1..].to_vec());
+}
+//find the maximum number in a list using recursion
+

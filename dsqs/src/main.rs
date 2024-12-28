@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use std::collections::HashSet;
 use std::io;
 mod ds_2;
-
+mod ds_3;
 /**Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order. */
@@ -231,6 +231,7 @@ fn intersect(arr1: Vec<i32>, arr2: Vec<i32>) -> Vec<i32> {
 
     intersect
 }
+/**Given an array points where points[i] = [xi, yi] represents a point on the X-Y plane, return true if these points are a boomerang. */
 
 fn main() {
     let nums: [i32; 4] = [2, 7, 11, 15];
@@ -260,8 +261,12 @@ fn main() {
     // let result = ds_2::plus_one(array);
     // println!("Result: {:?}", result); 
     let items1 = vec![1,2,2,1];
-    let items2 = vec![2, 2];
+   
     //let result = ds_2::mergedLists(items1, items2);
     //println!("{:?}", result);
-    println!("{:?}", intersect(items1, items2));
+    //println!("{:?}", intersect(items1, items2));
+    let item2 = vec![1, 2, 4, 6, 3, 7, 8];
+    let n = 8;
+    let missing = ds_3::missingNumber(&item2, n);
+    println!("The missing number is: {}", missing);
 }
