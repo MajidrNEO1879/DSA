@@ -22,12 +22,78 @@ pub fn missingNumber(arr:&[i32], n: i32) ->i32
     -1
 }   
 
-//Merge two sorted arrays into a single sorted array without using extra space.
-fn mergin(arr1:&[i32], arr2:&[i32]) ->&[i32]
+//Two Sum - Find pairs that sum to target
+fn twoSum(arr:&[i32], target:i32) ->bool
 {
-    for i in arr2
+    // for i in 0..arr.len()
+    // {
+    //     for j in 0..arr.len()
+    //     {
+    //         if i != j && arr[i] + arr[j] ==  target
+    //         {
+    //             return true;
+    //         }
+    //     }
+    // }
+    // false
+    for (index_i , &val_i) in arr.iter().enumerate()
     {
-        arr1.push(i);
+        for (index_j , &val_j) in arr.iter().enumerate()
+        {
+            if index_i != index_j && val_i + val_j == target 
+            {
+                return true;
+            } 
+        }
     }
-    arr1
+    false
+}
+//Container With Most Water
+/**Given n non-negative integers a1,a2,…,ana1​,a2​,…,an​ where each represents a point at coordinate (i,ai)(i,ai​). ‘ n ‘ vertical lines are drawn such that the two
+ *  endpoints of line i is at (i,ai) (i,ai​) and (i,0)(i,0). Find two lines, which together with x-axis forms a container, such that the container contains the most 
+ * water. */
+// fn waterContainer()
+// {
+
+// }
+
+/**Given an array arr[], the task is to find all possible indices {i, j, k} of triplet {arr[i], arr[j], arr[k]} such that their sum is equal to zero and all 
+ * indices in a triplet should be distinct (i != j, j != k, k != i). We need to return indices of a triplet in sorted order, i.e., i < j < k. */
+ fn threeSum(arr:&[i32]) ->Vec<(usize, usize, usize)>
+ {
+    let mut items = Vec::new();
+    for i in 0..arr.len()
+    {
+        for j in 0..arr.len()
+        {
+            for k in 0..arr.len()
+            {
+                if i < j && j < k && arr[i] + arr[j] + arr[k] == 0
+                {
+                    items.push((i, j, k));
+                }
+            }
+        }
+    }
+    items
+ }
+ //Given a string s, find the length of the longest substring without repeating characters
+// fn longestSubString()
+// {
+//     let x:String = String::from("Hello world");
+//     for i  in x.chars()
+//     {
+       
+//     }
+// }
+
+/**A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, 
+ * it reads the same forward and backward. Alphanumeric characters include letters and numbers. */
+fn validPalindrome(phrase:String) -> bool
+{
+    //to remove whte spaces from all the places we can use split_whitespace.collcet()
+    //but the is_alphabetic() removes that aswell.
+    let mut cleaned = phrase.to_lowercase();
+    cleaned.retain(|c| c.is_alphabetic());
+    cleaned == cleaned.chars().rev().collect::<String>()
 }
