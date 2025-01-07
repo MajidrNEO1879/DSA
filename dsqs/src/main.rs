@@ -5,6 +5,8 @@ use std::io;
 mod ds_2;
 mod ds_3;
 mod top_50_2;
+mod linked_list_q;
+
 /**Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order. */
@@ -261,13 +263,15 @@ fn main() {
     // let array = vec![4,3,2,1];
     // let result = ds_2::plus_one(array);
     // println!("Result: {:?}", result); 
-    let items1 = vec![1,2,2,1];
+    //let items1 = vec![1,2,2,1];
    
     //let result = ds_2::mergedLists(items1, items2);
     //println!("{:?}", result);
     //println!("{:?}", intersect(items1, items2));
-    let item2 = vec![1, 2, 4, 6, 3, 7, 8];
-    let n = 8;
-    let missing = ds_3::missingNumber(&item2, n);
-    println!("The missing number is: {}", missing);
+    // let item2 = vec![1, 2, 4, 6, 3, 7, 8];
+    // let n = 8;
+    // let missing = ds_3::missingNumber(&item2, n);
+    // println!("The missing number is: {}", missing);
+    linked_list_q::reverseLinkedList();
+
 }
