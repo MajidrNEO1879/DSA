@@ -258,7 +258,7 @@ fn main() {
     // oddEvenIndex(&evenOdd);
     // println!("{:?}", transposed);
     // print!("{:?}", maxSubArray(array));
-    // let input = String::from("({[]})");
+    let input = String::from("swiss");
     // println!("Is valid: {}", isValid(input));
     // let array = vec![4,3,2,1];
     // let result = ds_2::plus_one(array);
@@ -272,6 +272,11 @@ fn main() {
     // let n = 8;
     // let missing = ds_3::missingNumber(&item2, n);
     // println!("The missing number is: {}", missing);
-    linked_list_q::reverseLinkedList();
-
+    //linked_list_q::reverseLinkedList();
+    //let waterheight: [i32; 8] = [2, 1, 8, 6, 4, 6, 5, 5];
+    //let y = ds_3::waterContainer(&waterheight);
+    match ds_3::non_repeat(input) {
+        Some(ch) => println!("First non-repeating character: {}", ch),
+        None => println!("No non-repeating character found"),
+    }
 }

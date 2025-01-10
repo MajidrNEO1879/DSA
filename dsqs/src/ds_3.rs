@@ -1,7 +1,7 @@
 //some of the most common array and list questions
 
 use std::collections::HashMap;
-
+use std::cmp;
 //Given an array containing n-1 numbers from 1 to n, find the missing number.
 pub fn missingNumber(arr:&[i32], n: i32) ->i32
 {
@@ -52,10 +52,25 @@ fn twoSum(arr:&[i32], target:i32) ->bool
 /**Given n non-negative integers a1,a2,…,ana1​,a2​,…,an​ where each represents a point at coordinate (i,ai)(i,ai​). ‘ n ‘ vertical lines are drawn such that the two
  *  endpoints of line i is at (i,ai) (i,ai​) and (i,0)(i,0). Find two lines, which together with x-axis forms a container, such that the container contains the most 
  * water. */
-// fn waterContainer()
-// {
-
-// }
+pub fn waterContainer(heights:&[i32]) -> usize
+{
+    let mut area :usize= 0;
+    for (i, &value1) in heights.iter().enumerate()
+    {
+        for (j, &value2) in heights.iter().enumerate().skip(i+1)
+        {
+            if area >  (j -i) * cmp::min(value2 as usize, value1 as usize)
+            {
+                continue;
+            }
+            else {
+                
+                area = (j -i) * cmp::min(value2 as usize, value1 as usize);
+            }
+        }
+    }
+    area
+}
 
 /**Given an array arr[], the task is to find all possible indices {i, j, k} of triplet {arr[i], arr[j], arr[k]} such that their sum is equal to zero and all 
  * indices in a triplet should be distinct (i != j, j != k, k != i). We need to return indices of a triplet in sorted order, i.e., i < j < k. */
@@ -96,4 +111,26 @@ fn validPalindrome(phrase:String) -> bool
     let mut cleaned = phrase.to_lowercase();
     cleaned.retain(|c| c.is_alphabetic());
     cleaned == cleaned.chars().rev().collect::<String>()
+}
+
+//Given a string, find the first character that does not repeat. If all characters repeat, return None.
+pub fn non_repeat(word: String) -> Option<char> {
+    let mut char_counts = HashMap::new();
+
+    for ch in word.chars() {
+        if let Some(count) = char_counts.get_mut(&ch) {
+            *count += 1;
+        } else {
+            char_counts.insert(ch, 1);
+        }
+    }
+    for ch in word.chars() {
+        if let Some(&count) = char_counts.get(&ch) {
+            if count == 1 {
+                return Some(ch); 
+            }
+        }
+    }
+
+    None 
 }
