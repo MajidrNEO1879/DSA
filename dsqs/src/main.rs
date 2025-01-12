@@ -6,7 +6,8 @@ mod ds_2;
 mod ds_3;
 mod top_50_2;
 mod linked_list_q;
-
+mod tree_r;
+use tree_r::TreeNode;
 /**Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order. */
@@ -275,8 +276,39 @@ fn main() {
     //linked_list_q::reverseLinkedList();
     //let waterheight: [i32; 8] = [2, 1, 8, 6, 4, 6, 5, 5];
     //let y = ds_3::waterContainer(&waterheight);
-    match ds_3::non_repeat(input) {
-        Some(ch) => println!("First non-repeating character: {}", ch),
-        None => println!("No non-repeating character found"),
-    }
+    // match ds_3::non_repeat(input) {
+    //     Some(ch) => println!("First non-repeating character: {}", ch),
+    //     None => println!("No non-repeating character found"),
+    // }
+
+
+    let tree = TreeNode {
+        value: 1,
+        left: Some(Box::new(TreeNode {
+            value: 2,
+            left: Some(Box::new(TreeNode {
+                value: 4,
+                left: None,
+                right: None,
+            })),
+            right: Some(Box::new(TreeNode {
+                value: 5,
+                left: None,
+                right: None,
+            })),
+        })),
+        right: Some(Box::new(TreeNode {
+            value: 3,
+            left: None,
+            right: Some(Box::new(TreeNode {
+                value: 6,
+                left: None,
+                right: None,
+            })),
+        })),
+    };
+
+    // Calculate the size of the tree
+    let size = tree.size();
+    println!("The size of the tree is: {}", size);
 }

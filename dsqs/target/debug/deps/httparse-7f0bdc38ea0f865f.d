@@ -1,0 +1,12 @@
+/home/majid/Desktop/WebDev/C++/dsqs/target/debug/deps/libhttparse-7f0bdc38ea0f865f.rmeta: /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/lib.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/iter.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/macros.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/mod.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/swar.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/sse42.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/avx2.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/runtime.rs
+
+/home/majid/Desktop/WebDev/C++/dsqs/target/debug/deps/httparse-7f0bdc38ea0f865f.d: /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/lib.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/iter.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/macros.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/mod.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/swar.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/sse42.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/avx2.rs /home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/runtime.rs
+
+/home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/lib.rs:
+/home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/iter.rs:
+/home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/macros.rs:
+/home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/mod.rs:
+/home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/swar.rs:
+/home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/sse42.rs:
+/home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/avx2.rs:
+/home/majid/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.9.5/src/simd/runtime.rs:
