@@ -314,5 +314,10 @@ fn main() {
     let characters = [&'a', &'b', &'a', &'c', &'b', &'d'];
     let k = 2;
     let result = string_qs::kthDistinct(&characters, k);
-    println!("{}", result); // Output: "c"
+    // println!("{}", result); 
+    let chars = ['a', 'b', 'c','d'];
+    // print!("{:?}", string_qs::reverseString(&chars));
+    let input:String = String::from("leetcode");
+    let result =string_qs::reverseVowel(input);
+    println!("{}", result); 
 }

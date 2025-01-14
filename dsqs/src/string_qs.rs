@@ -27,3 +27,32 @@ pub fn kthDistinct(arr:&[&char], k:i32)-> String
     // If fewer than k distinct characters, return an empty string
     "".to_string()
 }
+
+//Write a function that reverses a string. The input string is given as an array of characters s.
+pub fn reverseString(arr:&[char])->Vec<char>
+{
+    arr.iter().rev().cloned().collect()
+}
+//Given a string s, reverse only all the vowels in the string and return it.
+pub fn reverseVowel(s:String) ->String
+{
+    let mut chars: Vec<char> = s.chars().collect(); 
+    let vowels = "aeiouAEIOU"; 
+    let mut p1 = 0;
+    let mut p2 = chars.len() - 1;
+
+    while p1 < p2 {
+        while p1 < p2 && !vowels.contains(chars[p1]) {
+            p1 += 1;
+        }
+        while p1 < p2 && !vowels.contains(chars[p2]) {
+            p2 -= 1;
+        }
+        if p1 < p2 {
+            chars.swap(p1, p2);
+            p1 += 1;
+            p2 -= 1;
+        }
+    }
+    chars.into_iter().collect()
+}
