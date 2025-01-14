@@ -7,7 +7,9 @@ mod ds_3;
 mod top_50_2;
 mod linked_list_q;
 mod tree_r;
+mod string_qs;
 use tree_r::TreeNode;
+
 /**Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order. */
@@ -280,35 +282,37 @@ fn main() {
     //     Some(ch) => println!("First non-repeating character: {}", ch),
     //     None => println!("No non-repeating character found"),
     // }
+    // let tree = TreeNode {
+    //     value: 1,
+    //     left: Some(Box::new(TreeNode {
+    //         value: 2,
+    //         left: Some(Box::new(TreeNode {
+    //             value: 4,
+    //             left: None,
+    //             right: None,
+    //         })),
+    //         right: Some(Box::new(TreeNode {
+    //             value: 5,
+    //             left: None,
+    //             right: None,
+    //         })),
+    //     })),
+    //     right: Some(Box::new(TreeNode {
+    //         value: 3,
+    //         left: None,
+    //         right: Some(Box::new(TreeNode {
+    //             value: 6,
+    //             left: None,
+    //             right: None,
+    //         })),
+    //     })),
+    // };
 
-
-    let tree = TreeNode {
-        value: 1,
-        left: Some(Box::new(TreeNode {
-            value: 2,
-            left: Some(Box::new(TreeNode {
-                value: 4,
-                left: None,
-                right: None,
-            })),
-            right: Some(Box::new(TreeNode {
-                value: 5,
-                left: None,
-                right: None,
-            })),
-        })),
-        right: Some(Box::new(TreeNode {
-            value: 3,
-            left: None,
-            right: Some(Box::new(TreeNode {
-                value: 6,
-                left: None,
-                right: None,
-            })),
-        })),
-    };
-
-    // Calculate the size of the tree
-    let size = tree.size();
-    println!("The size of the tree is: {}", size);
+    // // Calculate the size of the tree
+    // let size = tree.size();
+    // println!("The size of the tree is: {}", size);
+    let characters = [&'a', &'b', &'a', &'c', &'b', &'d'];
+    let k = 2;
+    let result = string_qs::kthDistinct(&characters, k);
+    println!("{}", result); // Output: "c"
 }
