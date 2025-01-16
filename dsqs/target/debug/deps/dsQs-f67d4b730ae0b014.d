@@ -1,0 +1,11 @@
+/home/majid/Desktop/WebDev/C++/dsqs/target/debug/deps/libdsQs-f67d4b730ae0b014.rmeta: src/main.rs src/ds_2.rs src/ds_3.rs src/top_50_2.rs src/linked_list_q.rs src/tree_r.rs src/string_qs.rs
+
+/home/majid/Desktop/WebDev/C++/dsqs/target/debug/deps/dsQs-f67d4b730ae0b014.d: src/main.rs src/ds_2.rs src/ds_3.rs src/top_50_2.rs src/linked_list_q.rs src/tree_r.rs src/string_qs.rs
+
+src/main.rs:
+src/ds_2.rs:
+src/ds_3.rs:
+src/top_50_2.rs:
+src/linked_list_q.rs:
+src/tree_r.rs:
+src/string_qs.rs:

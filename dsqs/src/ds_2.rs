@@ -1,3 +1,5 @@
+use std::vec;
+
 pub fn plus_one(digits: Vec<i32>) -> Vec<i32> {
     let mut digits = digits; 
     let mut carry = 1;       
@@ -50,5 +52,32 @@ fn arrayLen(arr:&Vec<i32>)->usize
    }
    return 1 + arrayLen(&arr[1..].to_vec());
 }
-//find the maximum number in a list using recursion
+//all the sub arrays
 
+pub fn subArrays (arr:&[i32])->Vec<Vec<i32>>
+{
+    let mut subarrays = Vec::new();
+
+    for start in 0..arr.len() {
+        for end in start + 1..=arr.len() {
+            subarrays.push(arr[start..end].to_vec());
+        }
+    }
+
+    subarrays
+}
+
+//from all subarrays what is the maximum and minimum one?
+pub fn max_subarray(arr: &[i32]) -> i32 {
+    let sub_arrays = subArrays(arr);
+    let mut max_sum = i32::MIN; 
+
+    for subarray in sub_arrays {
+        let sum: i32 = subarray.iter().sum(); 
+        if sum > max_sum {
+            max_sum = sum; 
+        }
+    }
+
+    max_sum
+}
