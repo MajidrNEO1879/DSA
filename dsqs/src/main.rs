@@ -8,6 +8,7 @@ mod top_50_2;
 mod linked_list_q;
 mod tree_r;
 mod string_qs;
+mod matrix;
 use tree_r::TreeNode;
 
 /**Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -319,5 +320,13 @@ fn main() {
     // print!("{:?}", string_qs::reverseString(&chars));
     let input:String = String::from("leetcode");
     let result =string_qs::reverseVowel(input);
-    println!("{}", result); 
+    // println!("{}", result); 
+    let grid = vec![
+        vec![1, 2, 3],
+        vec![4, 5, 6],
+        vec![7, 8, 9],
+    ];
+    let k = 1;
+    let shifted_grid = matrix::shift_grid(grid, k);
+    println!("{:?}", shifted_grid);
 }
